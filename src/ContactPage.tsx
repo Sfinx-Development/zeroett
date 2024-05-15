@@ -1,17 +1,16 @@
-import { Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import CompanyForm from "./components/CompanyForm.tsx";
 import ClientIdeaForm from "./components/CustomerIdeaForm";
-import CompanyForm from "../components/CompanyForm.tsx";
-import FormStepper from "../components/FormStepper.tsx";
-import LogoText from "../components/LogoText.tsx";
-import PersonalDataForm from "../components/PersonalDataForm.tsx";
+import FormStepper from "./components/FormStepper.tsx";
+import PersonalDataForm from "./components/PersonalDataForm.tsx";
 
 const useStyles = makeStyles({
   blackBackground: {
     backgroundColor: "black",
     width: "100%",
-    height: "100vh", 
-  }
+    height: "100vh",
+  },
 });
 
 export default function ContactPage() {
@@ -19,16 +18,24 @@ export default function ContactPage() {
 
   return (
     <div className={classes.blackBackground}>
-         
-      <Typography variant="h4" style={{ color: "white" }}>
-        Hej
-      </Typography>
-      <Typography variant="h4" style={{ color: "white" }}>
-        Hej
-      </Typography>
-      <Typography variant="h4" style={{ color: "white" }}>
-        Hej
-      </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          height: "100%",
+          justifyContent: "center",
+          padding: 2,
+        }}
+      >
+        <FormStepper
+          steps={[
+            { title: "Uppgifter", form: PersonalDataForm },
+            { title: "Företag eller privatperson", form: CompanyForm },
+            { title: "Beskriv din idé", form: ClientIdeaForm },
+          ]}
+        />
+      </Box>
     </div>
   );
 }

@@ -5,6 +5,7 @@ import StepLabel from "@mui/material/StepLabel";
 import Stepper from "@mui/material/Stepper";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
+import { Link } from "react-router-dom";
 import { Customer, useCustomerContext } from "../contexts/customerContext";
 
 interface StepData {
@@ -75,21 +76,39 @@ export default function FormStepper(props: Props) {
     >
       {!completed ? (
         <div>
-          <Stepper activeStep={activeStep} alternativeLabel>
+          <Stepper
+            activeStep={activeStep}
+            sx={{ color: "white !important" }}
+            alternativeLabel
+          >
             {steps.map((step) => (
-              <Step key={step.title}>
-                <StepLabel>{step.title}</StepLabel>
+              <Step
+                sx={{
+                  "& .MuiStepLabel-label.Mui-completed.MuiStepLabel-alternativeLabel":
+                    {
+                      color: "white",
+                    },
+                  "& .MuiStepLabel-label.Mui-active.MuiStepLabel-alternativeLabel":
+                    {
+                      color: "common.white",
+                    },
+                }}
+                key={step.title}
+              >
+                <StepLabel sx={{ color: "white !important" }}>
+                  {step.title}
+                </StepLabel>
               </Step>
             ))}
           </Stepper>
           <div>
             {activeStep === steps.length ? (
               <div>
-                <Typography component="div" sx={{ mt: 2 }}>
-                  <Typography variant="h6" gutterBottom>
+                <Typography component="div" color="white" sx={{ mt: 2 }}>
+                  <Typography variant="h6" color="white" gutterBottom>
                     Alla steg är klara
                   </Typography>
-                  <Typography variant="body1">
+                  <Typography variant="body1" color="white">
                     Visa någon form av avslutningsmeddelande här.
                   </Typography>
                 </Typography>
@@ -121,17 +140,25 @@ export default function FormStepper(props: Props) {
           </div>
         </div>
       ) : (
-        <div
-          style={{
+        <Box
+          sx={{
             display: "flex",
+            flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
+            height: "100vh",
+            color: "white",
           }}
         >
-          <Typography marginBottom={4} variant="h6">
-            Vi hör av oss till {customer.email} inom 3 dagar.
+          <Typography variant="h4" sx={{ mb: 4 }}>
+            Vi hör av oss till {customer.email} inom 3 dagar
           </Typography>
-        </div>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Typography variant="h2" color="white">
+              Gå till Zeroett
+            </Typography>
+          </Link>
+        </Box>
       )}
     </Box>
   );
