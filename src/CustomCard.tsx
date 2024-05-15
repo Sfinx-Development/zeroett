@@ -21,6 +21,7 @@ export default function PortfolieCard({ name, url, description }: Props) {
         margin: isMobile ? 2 : 5,
         borderRadius: 16,
         height: 200,
+        width: 300,
         overflow: "hidden",
         boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.1)",
       }}

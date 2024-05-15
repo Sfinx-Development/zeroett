@@ -1,7 +1,7 @@
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import { Box, Typography, Link } from "@mui/material";
+import { Box, Link, Typography, keyframes } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { useState } from "react";
 import PortfolieCard from "./CustomCard";
@@ -11,6 +11,15 @@ const useStyles = makeStyles({
     transition: "flex 0.5s ease-in-out",
   },
 });
+
+const slideAnimation = keyframes`
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+`;
 
 export default function Index() {
   const [flexBox1, setFlexBox1] = useState(false);
@@ -52,23 +61,40 @@ export default function Index() {
         onMouseOver={() => setFlexBox1(true)}
         onMouseOut={() => setFlexBox1(false)}
       >
-        <img
-          src="https://i.imgur.com/8982cbe.png"
-          alt="Girl in a jacket"
-          style={{ width: "300px", height: "100px" }}
-        ></img>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            padding: 2,
+          }}
+        >
+          <img
+            src="https://i.imgur.com/8982cbe.png"
+            alt="Girl in a jacket"
+            style={{ width: "300px", height: "100px" }}
+          ></img>
 
-        <Link href="/contact" color="inherit" underline="none">
-          <Typography variant="h4" color="white">
-            Kontakta oss med din ide
-          </Typography>
-        </Link>
-
+          <Link href="/contact" color="inherit" underline="none">
+            <Typography variant="h6" color="white">
+              Kontakta oss med din idè
+            </Typography>
+          </Link>
+        </div>
         {flexBox1 && (
           <Box sx={{ display: "flex", gap: 4 }}>
-            <InstagramIcon sx={{ color: "white", fontSize: 40 }} />
-            <MailOutlineIcon sx={{ color: "white", fontSize: 40 }} />
-            <LinkedInIcon sx={{ color: "white", fontSize: 40 }} />
+            <Link href="https://www.instagram.com/zeroettab" target="_blank">
+              <InstagramIcon sx={{ color: "white", fontSize: 40 }} />
+            </Link>
+            <Link href="mailto:zeroettab@gmail.com" target="_blank">
+              <MailOutlineIcon sx={{ color: "white", fontSize: 40 }} />
+            </Link>
+            <Link
+              href="https://www.linkedin.com/company/102941131/admin/feed/posts/?feedType=following"
+              target="_blank"
+            >
+              <LinkedInIcon sx={{ color: "white", fontSize: 40 }} />
+            </Link>
           </Box>
         )}
         {flexBox1 && (
@@ -101,22 +127,45 @@ export default function Index() {
           PORTFOLIO
         </Typography>
         {flexBox2 && (
-          <Box sx={{ display: "flex", gap: 1 }}>
-            <PortfolieCard
-              name="CY Virtual Workplace"
-              url={["https://i.imgur.com/a6wGen3.png"]}
-              description="A remote workplace"
-            />
-            <PortfolieCard
-              name="Test Your App"
-              url={["https://i.imgur.com/EuK2GBb.jpg"]}
-              description="A mobile app for testing new apps"
-            />
-            <PortfolieCard
-              name="Where's the sun?"
-              url={["https://i.imgur.com/kW51MSz.jpg"]}
-              description="A mobile weather app - spot the sun near you"
-            />
+          <Box
+            sx={{
+              display: "flex",
+              width: "100%",
+              overflow: "hidden",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                animation: `${slideAnimation} 30s linear infinite`,
+              }}
+            >
+              <PortfolieCard
+                name="CY Virtual Workplace - Web service"
+                url={["https://i.imgur.com/a6wGen3.png"]}
+                description="A remote workplace"
+              />
+              <PortfolieCard
+                name="Test Your App - Mobile app"
+                url={["https://i.imgur.com/EuK2GBb.jpg"]}
+                description="A mobile app for testing new apps"
+              />
+              <PortfolieCard
+                name="Where's the sun? - Mobile app"
+                url={["https://i.imgur.com/kW51MSz.jpg"]}
+                description="A mobile weather app - spot the sun near you"
+              />
+              <PortfolieCard
+                name="Webshop - online shop"
+                url={["https://i.imgur.com/PmbQFoo.png"]}
+                description="A webshop and administration service"
+              />
+              <PortfolieCard
+                name="Check your todos - online calendar"
+                url={["https://i.imgur.com/V4zBTxl.png"]}
+                description="A calendar online with todos"
+              />
+            </Box>
           </Box>
         )}
       </Box>
@@ -143,27 +192,28 @@ export default function Index() {
           OM OSS
         </Typography>
         {flexBox3 && (
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
-            {" "}
-            {/* Justera centrerad text */}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <Typography variant="body1" color="white" textAlign="center">
-              {" "}
-              {/* Justera centrerad text */}
-              Välkommen till ZEROETT <br /> <br></br>
               Vi fokuserar på att skapa starka, smarta <br />
               och säkra system för våra kunder. Vårt team består av två
               fullstackutvecklare <br />
-              med expertis i C#, JAVA, JavaScript, och TypeScript. Vi använder
-              ramverk som React, <br />
-              Svelte, Angular, Grails och .NET. Vår specialitet ligger i MySQL
-              och Firebase <br />
-              för små och stora system. Som fullstackutvecklare tar vi hand om
-              alla dina mjukvarubehov - från hemsidor och webbshoppar till
+              med extra kunskap i C#, JAVA, JavaScript, och TypeScript. Vi
+              använder ramverk som React, <br />
+              Svelte, Angular, Grails och .NET. för små och stora system.
+              <br />
+              <br /> Som fullstackutvecklare tar vi hand om alla dina
+              mjukvarubehov - från hemsidor och webbshoppar till
               mobilapplikationer <br />
               och funktioner i redan etablerade system. <br />
               <br />
               Dela din idé med oss idag! <br />
-              Med vänliga hälsningar, <br />
               Angelina & Elina
             </Typography>
           </Box>
