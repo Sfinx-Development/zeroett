@@ -1,6 +1,10 @@
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import { Box, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { useState } from "react";
+import PortfolieCard from "./CustomCard";
 
 const useStyles = makeStyles({
   slideInRight: {
@@ -45,6 +49,7 @@ export default function Index() {
           border: "none",
           justifyContent: "center",
           alignItems: "center",
+          gap: 2,
         }}
         onMouseOver={() => setFlexBox1(true)}
         onMouseOut={() => setFlexBox1(false)}
@@ -55,14 +60,11 @@ export default function Index() {
           style={{ width: "300px", height: "100px" }}
         ></img>
         {flexBox1 && (
-          <Typography
-            variant="h6"
-            color={"white"}
-            className={flexBox1 ? classes.slideInRight : classes.slideOutRight}
-          >
-            Zeroett AB är ett konsultföretag som utvecklar mjukvarulösningar åt
-            dig
-          </Typography>
+          <Box sx={{ display: "flex", gap: 4 }}>
+            <InstagramIcon sx={{ color: "white", fontSize: 40 }} />
+            <MailOutlineIcon sx={{ color: "white", fontSize: 40 }} />
+            <LinkedInIcon sx={{ color: "white", fontSize: 40 }} />
+          </Box>
         )}
         {flexBox1 && (
           <Typography
@@ -70,7 +72,8 @@ export default function Index() {
             color={"white"}
             className={flexBox1 ? classes.slideInRight : classes.slideOutRight}
           >
-            Här lägga kontakt till mail, instagram och linkedin
+            Zeroett AB är ett konsultföretag som utvecklar mjukvarulösningar åt
+            dig
           </Typography>
         )}
       </Box>
@@ -93,6 +96,25 @@ export default function Index() {
         <Typography variant="h2" color={"white"}>
           PORTFOLIO
         </Typography>
+        {flexBox2 && (
+          <Box sx={{ display: "flex", gap: 1 }}>
+            <PortfolieCard
+              name="CY Virtual Workplace"
+              url={["https://i.imgur.com/a6wGen3.png"]}
+              description="A remote workplace"
+            />
+            <PortfolieCard
+              name="Test Your App"
+              url={["https://i.imgur.com/EuK2GBb.jpg"]}
+              description="A mobile app for testing new apps"
+            />
+            <PortfolieCard
+              name="Where's the sun?"
+              url={["https://i.imgur.com/kW51MSz.jpg"]}
+              description="A mobile weather app - spot the sun near you"
+            />
+          </Box>
+        )}
       </Box>
       <Box
         sx={{
@@ -113,6 +135,11 @@ export default function Index() {
         <Typography variant="h2" color={"white"}>
           OM OSS
         </Typography>
+        {flexBox3 && (
+          <Box sx={{ display: "flex", gap: 1 }}>
+            <Typography color="white">Något om oss här då</Typography>
+          </Box>
+        )}
       </Box>
     </div>
   );
