@@ -20,6 +20,7 @@ export default function PortfolieCard({ name, url, description }: Props) {
       sx={{
         margin: isMobile ? 2 : 5,
         borderRadius: 16,
+        height: 200,
         overflow: "hidden",
         boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.1)",
       }}
@@ -35,13 +36,13 @@ export default function PortfolieCard({ name, url, description }: Props) {
       />
       <CardContent sx={{ backgroundColor: "#f8f8f8" }}>
         <Typography
-          variant="h6"
-          sx={{ textAlign: "center", fontWeight: "bold", marginBottom: 2 }}
+          variant="body1"
+          sx={{ textAlign: "center", fontWeight: "bold", marginBottom: 1 }}
         >
           {name}
         </Typography>
         <Typography
-          variant="body1"
+          variant="body2"
           sx={{
             textAlign: "center",
             fontSize: isMobile ? 14 : 16,

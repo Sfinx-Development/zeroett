@@ -7,13 +7,8 @@ import { useState } from "react";
 import PortfolieCard from "./CustomCard";
 
 const useStyles = makeStyles({
-  slideInRight: {
-    transition: "transform 0.5s ease-in-out",
-    transform: "translateX(0)",
-  },
-  slideOutRight: {
-    transition: "transform 0.5s ease-in-out",
-    transform: "translateX(100%)",
+  flexTransition: {
+    transition: "flex 0.5s ease-in-out",
   },
 });
 
@@ -38,11 +33,12 @@ export default function Index() {
       }}
     >
       <Box
+        className={classes.flexTransition}
         sx={{
           display: "flex",
           width: "100%",
           flexDirection: "column",
-          flex: flexBox1 ? 2 : 1,
+          flex: flexBox1 ? 3 : 1,
           backgroundColor: "black",
           padding: 0,
           margin: 0,
@@ -50,6 +46,8 @@ export default function Index() {
           justifyContent: "center",
           alignItems: "center",
           gap: 2,
+          overflow: "hidden",
+          transition: "flex 0.5s ease-in-out, height 0.5s ease-in-out",
         }}
         onMouseOver={() => setFlexBox1(true)}
         onMouseOut={() => setFlexBox1(false)}
@@ -67,28 +65,27 @@ export default function Index() {
           </Box>
         )}
         {flexBox1 && (
-          <Typography
-            variant="h6"
-            color={"white"}
-            className={flexBox1 ? classes.slideInRight : classes.slideOutRight}
-          >
+          <Typography variant="h6" color={"white"}>
             Zeroett AB är ett konsultföretag som utvecklar mjukvarulösningar åt
             dig
           </Typography>
         )}
       </Box>
       <Box
+        className={classes.flexTransition}
         sx={{
           display: "flex",
           width: "100%",
           flexDirection: "column",
-          flex: flexBox2 ? 2 : 1,
+          flex: flexBox2 ? 3 : 1,
           backgroundColor: "black",
           padding: 0,
           margin: 0,
           border: "none",
           justifyContent: "center",
           alignItems: "center",
+          overflow: "hidden",
+          transition: "flex 0.5s ease-in-out, height 0.5s ease-in-out",
         }}
         onMouseOver={() => setFlexBox2(true)}
         onMouseOut={() => setFlexBox2(false)}
@@ -117,17 +114,20 @@ export default function Index() {
         )}
       </Box>
       <Box
+        className={classes.flexTransition}
         sx={{
           display: "flex",
           width: "100%",
           flexDirection: "column",
-          flex: flexBox3 ? 2 : 1,
+          flex: flexBox3 ? 3 : 1,
           backgroundColor: "black",
           padding: 0,
           margin: 0,
           border: "none",
           justifyContent: "center",
           alignItems: "center",
+          overflow: "hidden",
+          transition: "flex 0.5s ease-in-out, height 0.5s ease-in-out",
         }}
         onMouseOver={() => setFlexBox3(true)}
         onMouseOut={() => setFlexBox3(false)}
