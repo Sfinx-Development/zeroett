@@ -132,12 +132,30 @@ export default function Index() {
         onMouseOver={() => setFlexBox3(true)}
         onMouseOut={() => setFlexBox3(false)}
       >
-        <Typography variant="h2" color={"white"}>
+   <Typography variant="h2" color={"white"}>
           OM OSS
         </Typography>
         {flexBox3 && (
-          <Box sx={{ display: "flex", gap: 1 }}>
-            <Typography color="white">Något om oss här då</Typography>
+          <Box sx={{ display: "flex", justifyContent: "center" }}> {/* Justera centrerad text */}
+            <Typography variant="body1" color="white" textAlign="center"> {/* Justera centrerad text */}
+              Välkommen till ZEROETT <br /> <br></br>
+              Vi fokuserar på att skapa starka, smarta <br />
+              och säkra system för våra kunder. Vårt 
+              team består av två fullstackutvecklare <br />
+              med expertis i C#, JAVA, JavaScript, och 
+              TypeScript. Vi använder ramverk som React, <br />
+              Svelte, Angular, Grails och .NET. Vår 
+              specialitet ligger i MySQL och Firebase <br />
+              för små och stora system. 
+              Som fullstackutvecklare tar vi hand om 
+              alla dina mjukvarubehov - från hemsidor 
+              och webbshoppar till mobilapplikationer <br />
+              och funktioner i redan etablerade 
+              system. <br/><br />
+              Dela din idé med oss idag! <br />
+              Med vänliga hälsningar, <br />
+              Angelina & Elina
+            </Typography>
           </Box>
         )}
       </Box>
