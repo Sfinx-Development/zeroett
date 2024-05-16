@@ -73,11 +73,11 @@ export default function Index() {
             style={{ width: "300px", height: "100px" }}
           ></img>
 
-          <Link href="/contact" color="inherit" underline="none">
+          {/* <Link href="/contact" color="inherit" underline="none">
             <Typography variant="h6" color="white">
               Kontakta oss med din idè
             </Typography>
-          </Link>
+          </Link> */}
         </div>
         {flexBox1 && (
           <Box sx={{ display: "flex", gap: 4, mt: 2 }}>
