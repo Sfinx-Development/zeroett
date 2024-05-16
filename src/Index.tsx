@@ -6,11 +6,14 @@ import { Box, Link, Typography, keyframes } from "@mui/material";
 import { useState } from "react";
 import PortfolieCard from "./CustomCard";
 
-const FlexBox = styled.div`
+interface FlexProps {
+  flex?: boolean;
+}
+
+const FlexBox = styled.div<FlexProps>`
   display: flex;
   width: 100%;
   flex-direction: column;
-  //@ts-ignore
   flex: ${({ flex }) => (flex ? 3 : 1)};
   background-color: black;
   padding: 0;
