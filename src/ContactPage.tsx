@@ -1,23 +1,24 @@
 import { Box } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import CompanyForm from "./components/CompanyForm.tsx";
 import ClientIdeaForm from "./components/CustomerIdeaForm";
 import FormStepper from "./components/FormStepper.tsx";
 import PersonalDataForm from "./components/PersonalDataForm.tsx";
 
-const useStyles = makeStyles({
-  blackBackground: {
-    backgroundColor: "black",
-    width: "100%",
-    height: "100vh",
-  },
-});
-
 export default function ContactPage() {
-  const classes = useStyles();
-
   return (
-    <div className={classes.blackBackground}>
+    <div
+      style={{
+        display: "flex",
+        flex: 1,
+        flexDirection: "column",
+        gap: 2,
+        width: "100%",
+        backgroundColor: "black",
+        padding: 0,
+        margin: 0,
+        border: "none",
+      }}
+    >
       <Box
         sx={{
           display: "flex",

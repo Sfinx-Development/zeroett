@@ -1,16 +1,27 @@
+import styled from "@emotion/styled";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import { Box, Link, Typography, keyframes } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import { useState } from "react";
 import PortfolieCard from "./CustomCard";
 
-const useStyles = makeStyles({
-  flexTransition: {
-    transition: "flex 0.5s ease-in-out",
-  },
-});
+const FlexBox = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  //@ts-ignore
+  flex: ${({ flex }) => (flex ? 3 : 1)};
+  background-color: black;
+  padding: 0;
+  margin: 0;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  gap: 2;
+  overflow: hidden;
+  transition: flex 0.5s ease-in-out, height 0.5s ease-in-out;
+`;
 
 const slideAnimation = keyframes`
   0% {
@@ -25,7 +36,6 @@ export default function Index() {
   const [flexBox1, setFlexBox1] = useState(false);
   const [flexBox2, setFlexBox2] = useState(false);
   const [flexBox3, setFlexBox3] = useState(false);
-  const classes = useStyles();
 
   return (
     <div
@@ -41,23 +51,8 @@ export default function Index() {
         border: "none",
       }}
     >
-      <Box
-        className={classes.flexTransition}
-        sx={{
-          display: "flex",
-          width: "100%",
-          flexDirection: "column",
-          flex: flexBox1 ? 3 : 1,
-          backgroundColor: "black",
-          padding: 0,
-          margin: 0,
-          border: "none",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: 2,
-          overflow: "hidden",
-          transition: "flex 0.5s ease-in-out, height 0.5s ease-in-out",
-        }}
+      <FlexBox
+        flex={flexBox1}
         onMouseOver={() => setFlexBox1(true)}
         onMouseOut={() => setFlexBox1(false)}
       >
@@ -103,23 +98,9 @@ export default function Index() {
             dig
           </Typography>
         )}
-      </Box>
-      <Box
-        className={classes.flexTransition}
-        sx={{
-          display: "flex",
-          width: "100%",
-          flexDirection: "column",
-          flex: flexBox2 ? 3 : 1,
-          backgroundColor: "black",
-          padding: 0,
-          margin: 0,
-          border: "none",
-          justifyContent: "center",
-          alignItems: "center",
-          overflow: "hidden",
-          transition: "flex 0.5s ease-in-out, height 0.5s ease-in-out",
-        }}
+      </FlexBox>
+      <FlexBox
+        flex={flexBox2}
         onMouseOver={() => setFlexBox2(true)}
         onMouseOut={() => setFlexBox2(false)}
       >
@@ -168,23 +149,9 @@ export default function Index() {
             </Box>
           </Box>
         )}
-      </Box>
-      <Box
-        className={classes.flexTransition}
-        sx={{
-          display: "flex",
-          width: "100%",
-          flexDirection: "column",
-          flex: flexBox3 ? 3 : 1,
-          backgroundColor: "black",
-          padding: 0,
-          margin: 0,
-          border: "none",
-          justifyContent: "center",
-          alignItems: "center",
-          overflow: "hidden",
-          transition: "flex 0.5s ease-in-out, height 0.5s ease-in-out",
-        }}
+      </FlexBox>
+      <FlexBox
+        flex={flexBox3}
         onMouseOver={() => setFlexBox3(true)}
         onMouseOut={() => setFlexBox3(false)}
       >
@@ -218,7 +185,7 @@ export default function Index() {
             </Typography>
           </Box>
         )}
-      </Box>
+      </FlexBox>
     </div>
   );
 }

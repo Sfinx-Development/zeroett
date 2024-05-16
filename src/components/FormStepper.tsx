@@ -146,11 +146,11 @@ export default function FormStepper(props: Props) {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            height: "100vh",
+            height: "100%",
             color: "white",
           }}
         >
-          <Typography variant="h4" sx={{ mb: 4 }}>
+          <Typography variant="h4" sx={{ mb: 6 }}>
             Vi hör av oss till {customer.email} inom 3 dagar
           </Typography>
           <Link to="/" style={{ textDecoration: "none" }}>
