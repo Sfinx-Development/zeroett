@@ -80,7 +80,7 @@ export default function Index() {
           </Link>
         </div>
         {flexBox1 && (
-          <Box sx={{ display: "flex", gap: 4 }}>
+          <Box sx={{ display: "flex", gap: 4, mt: 2 }}>
             <Link href="https://www.instagram.com/zeroettab" target="_blank">
               <InstagramIcon sx={{ color: "white", fontSize: 40 }} />
             </Link>
@@ -96,7 +96,7 @@ export default function Index() {
           </Box>
         )}
         {flexBox1 && (
-          <Typography variant="h6" color={"white"}>
+          <Typography variant="h6" mt={2} color={"white"}>
             Zeroett AB är ett konsultföretag som utvecklar mjukvarulösningar åt
             dig
           </Typography>
@@ -179,9 +179,12 @@ export default function Index() {
               Svelte, Angular, Grails och .NET. för små och stora system.
               <br />
               <br /> Som fullstackutvecklare tar vi hand om alla dina
-              mjukvarubehov - från hemsidor och webbshoppar till
-              mobilapplikationer <br />
-              och funktioner i redan etablerade system. <br />
+              mjukvarubehov - från <strong>hemsidor</strong> och{" "}
+              <strong>webbshoppar</strong> till
+              <br />
+              <strong>mobilapplikationer </strong>
+              samt <strong> funktioner i redan etablerade system.</strong>{" "}
+              <br />
               <br />
               Dela din idé med oss idag! <br />
               Angelina & Elina
