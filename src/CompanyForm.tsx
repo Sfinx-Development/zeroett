@@ -1,5 +1,5 @@
 import { Box, Checkbox, FormControlLabel, TextField } from "@mui/material";
-import { useCustomerContext } from "../contexts/customerContext";
+import { useCustomerContext } from "./contexts/customerContext";
 
 export default function CompanyForm() {
   const { customer, setCustomer } = useCustomerContext();

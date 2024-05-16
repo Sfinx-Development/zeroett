@@ -6,7 +6,7 @@ import Stepper from "@mui/material/Stepper";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { Customer, useCustomerContext } from "../contexts/customerContext";
+import { Customer, useCustomerContext } from "./contexts/customerContext";
 
 interface StepData {
   title: string;

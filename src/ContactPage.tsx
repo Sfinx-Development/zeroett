@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
-import CompanyForm from "./components/CompanyForm.tsx";
-import ClientIdeaForm from "./components/CustomerIdeaForm";
-import FormStepper from "./components/FormStepper.tsx";
-import PersonalDataForm from "./components/PersonalDataForm.tsx";
+import CompanyForm from "./CompanyForm.tsx";
+import ClientIdeaForm from "./CustomerIdeaForm.tsx";
+import FormStepper from "./FormStepper.tsx";
+import PersonalDataForm from "./PersonalDataForm.tsx";
 
 export default function ContactPage() {
   return (

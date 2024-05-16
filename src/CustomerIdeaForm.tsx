@@ -1,6 +1,6 @@
 import { Box, TextField } from "@mui/material";
 
-import { useCustomerContext } from "../contexts/customerContext";
+import { useCustomerContext } from "./contexts/customerContext";
 
 export default function ClientIdeaForm() {
   const { customer, setCustomer } = useCustomerContext();
