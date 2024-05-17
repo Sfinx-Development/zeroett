@@ -8,6 +8,7 @@ import PortfolieCard from "./CustomCard";
 
 interface FlexProps {
   flex?: boolean;
+  flex3?: boolean;
 }
 
 export const isMobile = window.innerWidth <= 500;
@@ -16,7 +17,16 @@ const FlexBox = styled.div<FlexProps>`
   display: flex;
   width: 100%;
   flex-direction: column;
-  flex: ${({ flex }) => (flex && isMobile ? 5 : flex && !isMobile ? 3 : 1)};
+  flex: ${({ flex, flex3 }) =>
+    flex3 && isMobile
+      ? 5
+      : flex && isMobile
+      ? 3
+      : flex3 && !isMobile
+      ? 3
+      : flex && !isMobile
+      ? 3
+      : 1};
   background-color: black;
   padding: 0;
   margin: 0;
@@ -71,7 +81,7 @@ export default function Index() {
         >
           <img
             src="https://i.imgur.com/8982cbe.png"
-            alt="Girl in a jacket"
+            alt="A text saying Zeroett"
             style={{ width: "300px", height: "100px" }}
           ></img>
 
@@ -109,7 +119,11 @@ export default function Index() {
         onMouseOver={() => setFlexBox2(true)}
         onMouseOut={() => setFlexBox2(false)}
       >
-        <Typography variant="h2" color={"white"}>
+        <Typography
+          variant="h2"
+          color={"white"}
+          marginBottom={flexBox2 && isMobile ? 4 : 0}
+        >
           PORTFOLIO
         </Typography>
         {flexBox2 && (
@@ -156,7 +170,7 @@ export default function Index() {
         )}
       </FlexBox>
       <FlexBox
-        flex={flexBox3}
+        flex3={flexBox3}
         onMouseOver={() => setFlexBox3(true)}
         onMouseOut={() => setFlexBox3(false)}
       >
