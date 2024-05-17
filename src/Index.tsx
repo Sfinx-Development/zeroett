@@ -10,11 +10,13 @@ interface FlexProps {
   flex?: boolean;
 }
 
+export const isMobile = window.innerWidth <= 500;
+
 const FlexBox = styled.div<FlexProps>`
   display: flex;
   width: 100%;
   flex-direction: column;
-  flex: ${({ flex }) => (flex ? 3 : 1)};
+  flex: ${({ flex }) => (flex && isMobile ? 5 : flex && !isMobile ? 3 : 1)};
   background-color: black;
   padding: 0;
   margin: 0;
@@ -96,7 +98,7 @@ export default function Index() {
           </Box>
         )}
         {flexBox1 && (
-          <Typography variant="h6" mt={2} color={"white"}>
+          <Typography variant="h6" mt={2} color={"white"} textAlign={"center"}>
             Zeroett AB är ett konsultföretag som utvecklar mjukvarulösningar åt
             dig
           </Typography>
@@ -166,27 +168,42 @@ export default function Index() {
             sx={{
               display: "flex",
               flexDirection: "column",
-              justifyContent: "center",
               alignItems: "center",
+              padding: 2,
+              flex: 1 / 2,
             }}
           >
-            <Typography variant="body1" color="white" textAlign="center">
-              Vi fokuserar på att skapa starka, smarta <br />
-              och säkra system för våra kunder. Vårt team består av två
-              fullstackutvecklare <br />
-              med extra kunskap i C#, JAVA, JavaScript, och TypeScript. Vi
-              använder ramverk som React, <br />
-              Svelte, Angular, Grails och .NET. för små och stora system.
-              <br />
-              <br /> Som fullstackutvecklare tar vi hand om alla dina
+            <Typography
+              variant="body1"
+              color="white"
+              textAlign="left"
+              paddingX={2}
+            >
+              Vi fokuserar på att skapa starka, smarta och säkra system för våra
+              kunder. Vårt team består av två fullstackutvecklare med extra
+              kunskap i C#, JAVA, JavaScript, och TypeScript. Vi använder
+              ramverk som React, Svelte, Angular, Grails och .NET. för små och
+              stora system. Som fullstackutvecklare tar vi hand om alla dina
               mjukvarubehov - från <strong>hemsidor</strong> och{" "}
-              <strong>webbshoppar</strong> till
-              <br />
+              <strong>webbshoppar</strong> till{" "}
               <strong>mobilapplikationer </strong>
-              samt <strong> funktioner i redan etablerade system.</strong>{" "}
-              <br />
-              <br />
-              Dela din idé med oss idag! <br />
+              samt <strong> funktioner i redan etablerade system.</strong>
+            </Typography>
+            <Typography
+              variant="body1"
+              color="white"
+              textAlign="left"
+              paddingX={2}
+              paddingY={2}
+            >
+              Dela din idé med oss idag!
+            </Typography>
+            <Typography
+              variant="body1"
+              color="white"
+              textAlign="left"
+              paddingX={2}
+            >
               Angelina & Elina
             </Typography>
           </Box>
