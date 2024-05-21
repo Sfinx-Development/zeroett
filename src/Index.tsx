@@ -161,9 +161,14 @@ export default function Index() {
                 description="A webshop and administration service"
               />
               <PortfolieCard
-                name="Check your todos - online calendar"
+                name="Online calendar"
                 url={["https://i.imgur.com/V4zBTxl.png"]}
-                description="A calendar online with todos"
+                description="A calendar online with todos and voice assistant"
+              />
+              <PortfolieCard
+                name="Homepage for business"
+                url={["https://i.imgur.com/kKyCoTP.png"]}
+                description="Custom designed homepage for a mobile app"
               />
             </Box>
           </Box>
